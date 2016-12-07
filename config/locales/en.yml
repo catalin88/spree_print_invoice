@@ -1,6 +1,7 @@
 ---
 en:
   spree:
+    reimbursed_amount: Reimbursed Amount
     print_invoice:
       documents: Documents
       documents_for_order: "Documents for order %{order_number}"
@@ -8,9 +9,11 @@ en:
         invoice: Print Invoice
         packaging_slip: Print Packaging Slip
       order_invoice: Invoice
+      order_return: Return Invoice
       order_packaging_slip: Packaging Slip
       reimbursement_invoice: Reimbursement Invoice
       invoice: Invoice
+      return: Return Invoice
       invoices: Invoices
       reimbursement: Reimbursement
       reimbursements: Reimbursements
@@ -47,4 +50,6 @@ en:
       pdf_legend: PDF Layout
       invoice_slip_legend: Invoice/Slip Content
       invoice_number: 'Invoice number: %{number}'
+      invoice_series: 'Invoice Series: %{series}'
       invoice_date: 'Invoice date: %{date}'
+      invoice_order_number: 'Invoice Order Number: %{number}'

@@ -3,6 +3,11 @@ Spree::Order.class_eval do
   has_one :invoice, -> { where(template: 'invoice') },
           class_name: 'Spree::BookkeepingDocument',
           as: :printable
+
+  has_one :return_invoice, -> { where(template: 'return') },
+          class_name: 'Spree::BookkeepingDocument',
+          as: :printable
+
   has_one :packaging_slip, -> { where(template: 'packaging_slip') },
           class_name: 'Spree::BookkeepingDocument',
           as: :printable
@@ -39,5 +44,11 @@ Spree::Order.class_eval do
   def invoice_for_order
     bookkeeping_documents.create(template: 'invoice')
     bookkeeping_documents.create(template: 'packaging_slip')
+  end
+
+  def reimbursed_amount
+    reimbursements.includes(:refunds).inject(0) do |sum, reimbursement|
+      sum + reimbursement.refunds.sum(:amount)
+    end
   end
 end
