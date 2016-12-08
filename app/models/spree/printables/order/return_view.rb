@@ -38,7 +38,7 @@ module Spree
           sku: item.inventory_unit.variant.sku,
           name: item.inventory_unit.variant.name,
           options_text: item.inventory_unit.variant.options_text,
-          price: -item.total,
+          price: item.total,
           quantity: -quantity,
           total: -(quantity * item.total)
         )
