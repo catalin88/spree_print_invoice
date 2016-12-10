@@ -53,3 +53,4 @@ en:
       invoice_series: 'Invoice Series: %{series}'
       invoice_date: 'Invoice date: %{date}'
       invoice_order_number: 'Invoice Order Number: %{number}'
+      original_invoice_info: 'Original Invoice Nr: %{number} Date: %{date}'
