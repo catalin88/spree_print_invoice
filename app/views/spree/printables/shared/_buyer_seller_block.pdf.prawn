@@ -11,6 +11,7 @@ buyer_address << ", #{buyer_details.city}"
 buyer_info = pdf.make_table([
   [Spree.t(:buyer, scope: :print_invoice) + " : ", "#{buyer_details.lastname} #{buyer_details.firstname}".upcase],
   ["Adresă : ", buyer_address],
+  ["Județ : ", buyer_details.state_name],
   ["Telefon : ", buyer_details.phone]
 ], column_widths: buyer_seller_table_width, :cell_style => {:border_width => 0, :padding => 1.5})
 
