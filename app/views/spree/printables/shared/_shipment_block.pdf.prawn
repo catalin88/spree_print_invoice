@@ -10,6 +10,7 @@ shipping << "\n#{ship_details.address2}" unless ship_details.address2.blank?
 shipping << ", #{ship_details.city}"
 shipping << "\nTelefon : #{ship_details.phone}"
 shipping << "\n\n#{Spree.t(:via, scope: :print_invoice)} #{printable.shipping_methods.join(", ")}"
+shipping << "\nAWB : #{printable.shipments[0].tracking}" unless printable.shipments[0].tracking.blank?
 
 data = [[address_cell_shipping], [shipping]]
 
